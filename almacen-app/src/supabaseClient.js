@@ -1,5 +1,5 @@
-import { createClient } from '@supabase/supabase-js';
 import React, { useState, useEffect } from 'react';
+import { createClient } from '@supabase/supabase-js';
 import './App.css';
 
 const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
@@ -21,7 +21,7 @@ function App() {
   };
 
   const agregarProducto = async () => {
-    const { data } = await supabase
+    await supabase
       .from('productos')
       .upsert({ nombre, cantidad, fecha: new Date().toISOString().split('T')[0] });
     fetchProductos();
