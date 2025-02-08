@@ -17,7 +17,7 @@ function App() {
   };
 
   const agregarProducto = async () => {
-    const { data } = await supabase
+    await supabase
       .from('productos')
       .upsert({ nombre, cantidad, fecha: new Date().toISOString().split('T')[0] });
     fetchProductos();

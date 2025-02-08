@@ -1,12 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 import React, { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
 import './App.css';
 
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_DATABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
 function App() {
